@@ -72,3 +72,8 @@ let calculo;
 // calculo()
 calculo = multiplicar;
 console.log(calculo(5, 6));
+// objeto
+let usuario = {
+    nome: "Felipe",
+    idade: 21
+};
