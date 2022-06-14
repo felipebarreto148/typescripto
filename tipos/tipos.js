@@ -77,3 +77,8 @@ let usuario = {
     nome: "Felipe",
     idade: 21
 };
+// Union Types
+let nota = 10;
+console.log(`Minha nota e ${nota}`);
+nota = "10";
+console.log(`Minha nota e ${nota}`);

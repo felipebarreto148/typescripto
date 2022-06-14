@@ -95,3 +95,9 @@ let usuario: { nome: string, idade: number } = {
     nome: "Felipe",
     idade: 21
 }
+
+// Union Types
+let nota: number | string = 10;
+console.log(`Minha nota e ${nota}`);
+nota = "10"
+console.log(`Minha nota e ${nota}`);
