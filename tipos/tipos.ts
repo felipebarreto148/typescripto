@@ -35,3 +35,21 @@ let endereco: [string, number, string] = ["Av Principal", 99, ""];
 console.log(endereco);
 
 endereco = ["Rua importante", 1260, "Bloco C"]
+console.log(endereco);
+
+// enums
+enum Cor {
+    Cinza,      // 0
+    Verde = 100,// 100
+    Azul = 2,   // 2
+    Laranja,    // 3
+    Amarelo,    // 4
+    Vermelho = 100,// 100
+}
+
+let minhaCor: Cor = Cor.Verde;
+console.log(minhaCor);
+
+console.log(Cor.Azul);
+console.log(Cor.Laranja, Cor.Amarelo);
+console.log(Cor.Verde, Cor.Vermelho);
