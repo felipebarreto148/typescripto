@@ -66,3 +66,9 @@ function multiplicar(a, b) {
 }
 // console.log(multiplicar(1, 'Felipe'));
 console.log(multiplicar(1, 2));
+// tipo function
+let calculo;
+// calculo = digaOi
+// calculo()
+calculo = multiplicar;
+console.log(calculo(5, 6));

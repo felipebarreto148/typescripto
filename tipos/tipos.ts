@@ -81,3 +81,11 @@ function multiplicar(a: number, b: number): number {
 }
 // console.log(multiplicar(1, 'Felipe'));
 console.log(multiplicar(1, 2));
+
+// tipo function
+let calculo: (a: number, b: number) => number;
+// calculo = digaOi
+// calculo()
+
+calculo = multiplicar
+console.log(calculo(5, 6));
