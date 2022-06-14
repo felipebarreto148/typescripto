@@ -1,6 +1,6 @@
 "use strict";
 // string
-let nome = "Jõao";
+let nome = "Felipe";
 console.log(nome);
 // nome = 28
 // number
@@ -49,3 +49,20 @@ let carro = "BMW";
 console.log(carro);
 carro = { marca: "BMW", ano: 2022 };
 console.log(carro);
+// funções
+function retornaMeuNome() {
+    //Define o retorno da funcao
+    // return minhaIdade
+    return nome;
+}
+console.log(retornaMeuNome());
+function digaOi() {
+    console.log("oi");
+    // return minhaIdade
+}
+digaOi();
+function multiplicar(a, b) {
+    return a * b;
+}
+// console.log(multiplicar(1, 'Felipe'));
+console.log(multiplicar(1, 2));

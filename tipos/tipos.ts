@@ -1,5 +1,5 @@
 // string
-let nome: string = "Jõao";
+let nome: string = "Felipe";
 console.log(nome);
 // nome = 28
 
@@ -59,3 +59,25 @@ let carro: any = "BMW";
 console.log(carro);
 carro = { marca: "BMW", ano: 2022 };
 console.log(carro);
+
+// funções
+function retornaMeuNome(): string {
+	//Define o retorno da funcao
+	// return minhaIdade
+	return nome;
+}
+
+console.log(retornaMeuNome());
+
+function digaOi(): void {
+	console.log("oi");
+	// return minhaIdade
+}
+
+digaOi();
+
+function multiplicar(a: number, b: number): number {
+	return a * b;
+}
+// console.log(multiplicar(1, 'Felipe'));
+console.log(multiplicar(1, 2));
