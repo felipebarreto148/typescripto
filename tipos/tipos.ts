@@ -110,3 +110,25 @@ if (typeof valor === "number") {
 } else {
 	console.log(typeof valor);
 }
+
+// never
+function falha(msg: string): never {
+	//Nunca chega no final da função de forma bem sucedida
+	// while (true) {}
+	throw new Error(msg);
+}
+
+const produto = {
+	nome: "Sabão",
+	preco: -1,
+	validarProduto() {
+		if (!this.nome || this.nome.trim().length) {
+			falha("Precisa ter um nome!");
+		}
+		if (this.preco <= 0) {
+			falha("Preço inválido!");
+		}
+	},
+};
+
+produto.validarProduto();
