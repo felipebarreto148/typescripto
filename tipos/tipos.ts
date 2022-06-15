@@ -154,17 +154,28 @@ console.log(contato1);
 
 // Desafio: Transformar o codigo abaixo em TS
 
-let contaBancaria = {
+type ContaBancaria = {
+	saldo: number;
+	depositar: (valor: number) => void;
+};
+
+type Correntista = {
+	nome: string;
+	contaBancaria: ContaBancaria;
+	contatos: string[];
+};
+
+let contaBancaria: ContaBancaria = {
 	saldo: 3456,
 	depositar(valor) {
 		this.saldo += valor;
 	},
 };
 
-let correntista = {
+let correntista: Correntista = {
 	nome: "Ana Silva",
 	contaBancaria,
-	contatos: ["34567890", 98765432],
+	contatos: ["34567890", "98765432"],
 };
 
 correntista.contaBancaria.depositar(3000);
