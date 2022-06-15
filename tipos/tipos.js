@@ -75,10 +75,18 @@ console.log(calculo(5, 6));
 // objeto
 let usuario = {
     nome: "Felipe",
-    idade: 21
+    idade: 21,
 };
 // Union Types
 let nota = 10;
 console.log(`Minha nota e ${nota}`);
 nota = "10";
 console.log(`Minha nota e ${nota}`);
+// Checando tipos
+let valor = 30;
+if (typeof valor === "number") {
+    console.log("É um number!");
+}
+else {
+    console.log(typeof valor);
+}
