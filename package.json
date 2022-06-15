@@ -1,0 +1,23 @@
+{
+  "name": "typescripto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipebarreto148/typescripto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipebarreto148/typescripto/issues"
+  },
+  "homepage": "https://github.com/felipebarreto148/typescripto#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
