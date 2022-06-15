@@ -98,9 +98,9 @@ function falha(msg) {
 }
 const produto = {
     nome: "Sabão",
-    preco: -1,
+    preco: 4,
     validarProduto() {
-        if (!this.nome || this.nome.trim().length) {
+        if (!this.nome || !this.nome.trim().length) {
             falha("Precisa ter um nome!");
         }
         if (this.preco <= 0) {
@@ -109,3 +109,13 @@ const produto = {
     },
 };
 produto.validarProduto();
+// null
+let altura = 12;
+let alturaOpcional = 12;
+alturaOpcional = null;
+const contato1 = {
+    nome: "Felipe",
+    tel1: "2199999-9999",
+    tel2: null
+};
+console.log(contato1);
