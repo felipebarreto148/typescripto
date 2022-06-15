@@ -87,17 +87,26 @@ let calculo: (a: number, b: number) => number;
 // calculo = digaOi
 // calculo()
 
-calculo = multiplicar
+calculo = multiplicar;
 console.log(calculo(5, 6));
 
 // objeto
-let usuario: { nome: string, idade: number } = {
-    nome: "Felipe",
-    idade: 21
-}
+let usuario: { nome: string; idade: number } = {
+	nome: "Felipe",
+	idade: 21,
+};
 
 // Union Types
 let nota: number | string = 10;
 console.log(`Minha nota e ${nota}`);
-nota = "10"
+nota = "10";
 console.log(`Minha nota e ${nota}`);
+
+// Checando tipos
+let valor = 30;
+
+if (typeof valor === "number") {
+	console.log("É um number!");
+} else {
+	console.log(typeof valor);
+}
