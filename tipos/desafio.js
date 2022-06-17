@@ -20,3 +20,4 @@ const funcionario = {
 console.log(funcionario.supervisores);
 console.log(funcionario.bater_ponto(8));
 console.log(funcionario.bater_ponto(9));
+//# sourceMappingURL=desafio.js.map
