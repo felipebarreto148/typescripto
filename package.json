@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "live-server"
+    "start": "tsc -w | live-server"
   },
   "repository": {
     "type": "git",
