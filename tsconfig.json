@@ -3,7 +3,7 @@
     /* Basic Config */
     "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "module": "commonjs",                                /* Specify what module code is generated. */
-    "noEmitOnError": true,
+    "noEmitOnError": false,
     "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
     // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
