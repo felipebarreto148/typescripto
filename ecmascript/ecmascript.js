@@ -57,4 +57,16 @@ arrowComThis();
 
 const arrowComThisEspecial = arrowComThis.bind({ nome: "Felipe" });
 arrowComThisEspecial(); */
+// Parametros padrao
+console.log("%cParametros padrao", style);
+function contagemRegressiva(inicio = 5, fim = inicio - 5) {
+    console.log(inicio);
+    while (inicio > fim) {
+        inicio--;
+        console.log(inicio);
+    }
+    console.log("Fim!");
+}
+contagemRegressiva();
+contagemRegressiva(3);
 //# sourceMappingURL=ecmascript.js.map

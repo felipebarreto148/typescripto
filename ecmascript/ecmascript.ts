@@ -70,3 +70,20 @@ arrowComThis();
 
 const arrowComThisEspecial = arrowComThis.bind({ nome: "Felipe" });
 arrowComThisEspecial(); */
+
+// Parametros padrao
+console.log("%cParametros padrao", style);
+
+function contagemRegressiva(
+	inicio: number = 5,
+	fim: number = inicio - 5
+): void {
+	console.log(inicio);
+	while (inicio > fim) {
+		inicio--;
+		console.log(inicio);
+	}
+	console.log("Fim!");
+}
+contagemRegressiva();
+contagemRegressiva(3);
