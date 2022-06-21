@@ -137,11 +137,15 @@ console.log("%cDestructuring (object)", style);
 const item = {
 	nome: "SSD 480GB",
 	preco: 200,
+	caracteristicas: {
+		w: "Importado"
+	}
 };
 // const nomeItem = item.nome;
 // const precoItem = item.preco;
 
-const { nome: n, preco } = item;
+const { nome: n, preco, caracteristicas: { w } } = item;
 console.log(n);
+console.log(w);
 console.log(preco);
 
