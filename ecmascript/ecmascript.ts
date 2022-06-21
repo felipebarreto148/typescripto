@@ -87,3 +87,35 @@ function contagemRegressiva(
 }
 contagemRegressiva();
 contagemRegressiva(3);
+
+// Rest & Spread
+console.log("%cRest & Spread", style);
+
+const numbers = [1, 10, 99, -5, 200, 19000];
+console.log(Math.max(...numbers));
+
+const turmaA: string[] = ["João", "Maria", "Fernanda"];
+const turmaB: string[] = ["Fernando", "Miguel", "Lorena", ...turmaA];
+console.log(turmaB);
+
+function retornarArray(...args: number[]): number[] {
+	return args;
+}
+const numeros = retornarArray(1, 2, 3, 4, 5);
+console.log(numeros);
+console.log(retornarArray(...numbers));
+
+// Rest & Spread (Tupla)
+console.log("%cRest & Spread (Tupla)", style);
+const tupla: [number, string, boolean] = [1, "abc", false];
+
+function tuplaParam1(a: number, b: string, c: boolean): void {
+	console.log(`1) ${a} ${b} ${c}`);
+}
+tuplaParam1(...tupla);
+
+function tuplaParam2(...params: [number, string, boolean]): void {
+	// console.log(Array.isArray(params));
+	console.log(`2) ${params[0]} ${params[1]} ${params[2]}`);
+}
+tuplaParam2(...tupla);
