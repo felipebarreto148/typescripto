@@ -38,3 +38,20 @@ console.log(aniversarioEsperto);
 const casamentoEsperto = new DataEsperta();
 casamentoEsperto.ano = 2022;
 console.log(casamentoEsperto);
+
+// Desafio Classe Produto
+// Atributos: nome, preco, desconto
+// Criar o construtor
+// Obs 1: Desconto deve ser opcional (Valor padrao 0)
+// Obs 2: Criar dois produtos: passando dois e tres params
+
+class Produto {
+	constructor(
+		public nome: string,
+		public preco: number,
+		public desconto: number = 0
+	) {}
+}
+
+const produto1 = new Produto("Notebook", 2999.90, 0.15);
+const produto2 = new Produto("iPad Pro", 1199.90);
