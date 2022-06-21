@@ -140,4 +140,30 @@ console.log(nota1, nota2, nota3);
 const cientista = { primeiroNome: "Will", experiencia: 12 };
 const { primeiroNome, experiencia } = cientista;
 console.log(primeiroNome, experiencia);
+// Promises
+console.log("%cPromises", style);
+// Callback
+function esperar3s(callback) {
+    setTimeout(() => {
+        callback("3s depois...");
+    }, 3000);
+}
+// esperar3s(function (resultado) {
+// 	console.log(resultado);
+// });
+function esperar3sPromise() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("3s depois promise...");
+        }, 3000);
+    });
+}
+// esperar3sPromise().then((dado) => console.log(dado));
+fetch("https://swapi.dev/api/people/1")
+    .then((res) => res.json())
+    .then((personagem) => personagem.films)
+    .then((films) => fetch(films[0]))
+    .then((resFilm) => resFilm.json())
+    .then((filme) => console.log(filme.title))
+    .catch((err) => console.log("Erro:" + err));
 //# sourceMappingURL=ecmascript.js.map
