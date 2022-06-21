@@ -108,13 +108,19 @@ const item = {
     nome: "SSD 480GB",
     preco: 200,
     caracteristicas: {
-        w: "Importado"
-    }
+        w: "Importado",
+    },
 };
 // const nomeItem = item.nome;
 // const precoItem = item.preco;
-const { nome: n, preco, caracteristicas: { w } } = item;
+const { nome: n, preco, caracteristicas: { w }, } = item;
 console.log(n);
 console.log(w);
 console.log(preco);
+// Template string
+console.log("%cTemplate string", style);
+const usuarioID = "user_123";
+const notificacoes = "19";
+const boasVindas = `Bem vindo ${usuarioID}, você tem ${parseInt(notificacoes) > 9 ? "+9" : notificacoes} notificações.`;
+console.log(boasVindas);
 //# sourceMappingURL=ecmascript.js.map
