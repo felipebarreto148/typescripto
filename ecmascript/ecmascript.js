@@ -123,4 +123,21 @@ const usuarioID = "user_123";
 const notificacoes = "19";
 const boasVindas = `Bem vindo ${usuarioID}, você tem ${parseInt(notificacoes) > 9 ? "+9" : notificacoes} notificações.`;
 console.log(boasVindas);
+// Desafio
+console.log("%cDesafio", style);
+const dobro = (valor) => valor * 2;
+console.log(dobro(10));
+const dizerOla = (nome = "Pessoa") => console.log(`Olá, ${nome}`);
+dizerOla();
+dizerOla("Anna");
+const nums = [-3, 33, 38, 5];
+console.log(Math.min(...nums));
+const array = [55, 20, ...nums];
+console.log(array);
+const notas = [8.5, 6.3, 9.4];
+const [nota1, nota2, nota3] = notas;
+console.log(nota1, nota2, nota3);
+const cientista = { primeiroNome: "Will", experiencia: 12 };
+const { primeiroNome, experiencia } = cientista;
+console.log(primeiroNome, experiencia);
 //# sourceMappingURL=ecmascript.js.map
