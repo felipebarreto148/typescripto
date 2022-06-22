@@ -72,3 +72,52 @@ console.log(produto1.resumo());
 
 const produto2 = new Produto("iPad Pro", 1199.9);
 console.log(produto2.resumo());
+
+class Carro {
+	private velocidadeAtual: number = 0;
+
+	constructor(
+		public marca: string,
+		public modelo: string,
+		private velocidadeMaxima: number = 200
+	) {}
+
+	private alterarVelocidade(delta: number): number {
+		const novaVelocidade = this.velocidadeAtual + delta;
+		if (novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima) {
+			this.velocidadeAtual = novaVelocidade;
+		} else {
+			this.velocidadeAtual = delta > 0 ? this.velocidadeMaxima : 0;
+		}
+		return this.velocidadeAtual;
+	}
+
+	public acelerar(): number {
+		return this.alterarVelocidade(5);
+	}
+
+	public frear(): number {
+		return this.alterarVelocidade(-5);
+	}
+}
+
+const carro1 = new Carro("Ford", "Ka", 185);
+Array(50)
+	.fill(0)
+	.forEach(() => carro1.acelerar());
+console.log(carro1.acelerar());
+Array(40)
+	.fill(0)
+	.forEach(() => carro1.frear());
+console.log(carro1.frear());
+
+// Simular "Erros"
+// carro1.velocidadeAtual = 300;
+// console.log("Velocidade: ", carro1.velocidadeAtual);
+
+// carro1.velocidadeMaxima = 500;
+// console.log("Velocidade Maxima: ", carro1.velocidadeMaxima);
+
+// carro1.alterarVelocidade(150);
+// console.log("Velocidade: ", carro1.velocidadeAtual);
+
