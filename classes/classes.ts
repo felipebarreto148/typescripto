@@ -82,7 +82,7 @@ class Carro {
 		private velocidadeMaxima: number = 200
 	) {}
 
-	private alterarVelocidade(delta: number): number {
+	protected alterarVelocidade(delta: number): number {
 		const novaVelocidade = this.velocidadeAtual + delta;
 		if (novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima) {
 			this.velocidadeAtual = novaVelocidade;
@@ -121,3 +121,25 @@ console.log(carro1.frear());
 // carro1.alterarVelocidade(150);
 // console.log("Velocidade: ", carro1.velocidadeAtual);
 
+// Herança
+class Ferrari extends Carro {
+	constructor(modelo: string, velocidadeMaxima: number) { 
+		super("Ferrari", modelo, velocidadeMaxima);
+	}
+	public acelerar(): number {
+		return this.alterarVelocidade(20);
+	}
+
+	public frear(): number {
+		return this.alterarVelocidade(-15);
+	}
+}
+
+const f40 = new Ferrari("F40", 340);
+console.log(`${f40.marca} ${f40.modelo}`);
+console.log(f40.acelerar());
+console.log(f40.acelerar());
+console.log(f40.acelerar());
+console.log(f40.frear());
+console.log(f40.frear());
+console.log(f40.frear());
