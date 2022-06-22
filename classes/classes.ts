@@ -169,7 +169,7 @@ console.log(pessoa1.idade);
 class Matematica {
 	static PI: number = 3.1416;
 
-	static areaCirc(raio: number): number { 
+	static areaCirc(raio: number): number {
 		return this.PI * Math.pow(raio, 2);
 	}
 }
@@ -179,3 +179,33 @@ class Matematica {
 // console.log(m1.areaCirc(4));
 
 console.log(Matematica.areaCirc(4));
+
+abstract class Calculo {
+	protected resultado: number = 0;
+
+	abstract executar(...numeros: number[]): void;
+
+	getResultado(): number {
+		return this.resultado;
+	}
+}
+
+class Soma extends Calculo {
+	executar(...numeros: number[]): void {
+		this.resultado = numeros.reduce((t, a) => t + a);
+	}
+}
+
+class Multiplicacao extends Calculo {
+	executar(...numeros: number[]): void {
+		this.resultado = numeros.reduce((t, a) => t * a);
+	}
+}
+
+let c1: Calculo = new Soma();
+c1.executar(2, 3, 4, 5);
+console.log(c1.getResultado());
+
+c1 = new Multiplicacao();
+c1.executar(2, 3, 4, 5);
+console.log(c1.getResultado());
