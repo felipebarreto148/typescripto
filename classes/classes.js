@@ -166,4 +166,27 @@ console.log(c1.getResultado());
 c1 = new Multiplicacao();
 c1.executar(2, 3, 4, 5);
 console.log(c1.getResultado());
+class Unico {
+    constructor() { }
+    static getInstance() {
+        return Unico.instance;
+    }
+    agora() {
+        return new Date();
+    }
+}
+Unico.instance = new Unico();
+// const errado = new Unico();
+console.log(Unico.getInstance().agora());
+// Somente leitura
+class Aviao {
+    constructor(modelo, prefixo) {
+        this.prefixo = prefixo;
+        this.modelo = modelo;
+    }
+}
+const turboHelice = new Aviao("Tu-114", "PT-ABC");
+// turboHelice.modelo = 'Tu-115';
+// turboHelice.prefixo = 'PT-DEF';
+console.log(turboHelice);
 //# sourceMappingURL=classes.js.map
