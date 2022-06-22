@@ -132,4 +132,14 @@ pessoa1.idade = 10;
 console.log(pessoa1.idade);
 pessoa1.idade = -3;
 console.log(pessoa1.idade);
+class Matematica {
+    static areaCirc(raio) {
+        return this.PI * Math.pow(raio, 2);
+    }
+}
+Matematica.PI = 3.1416;
+// const m1 = new Matematica();
+// m1.PI = 4.2;
+// console.log(m1.areaCirc(4));
+console.log(Matematica.areaCirc(4));
 //# sourceMappingURL=classes.js.map
