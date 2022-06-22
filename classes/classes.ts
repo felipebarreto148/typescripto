@@ -51,7 +51,24 @@ class Produto {
 		public preco: number,
 		public desconto: number = 0
 	) {}
+
+	// Criar método: precoComDesconto
+	// Quais sao os parametros e o retorno?
+	// Alterar metodo resumo para mostrar o preco com desconto
+
+	public precoComDesconto(): number {
+		return this.preco * (1 - this.desconto);
+	}
+
+	public resumo(): string {
+		return `${this.nome} custa R$ ${this.precoComDesconto()} com desconto de ${
+			this.desconto * 100
+		}%`;
+	}
 }
 
-const produto1 = new Produto("Notebook", 2999.90, 0.15);
-const produto2 = new Produto("iPad Pro", 1199.90);
+const produto1 = new Produto("Notebook", 2999.9, 0.15);
+console.log(produto1.resumo());
+
+const produto2 = new Produto("iPad Pro", 1199.9);
+console.log(produto2.resumo());
