@@ -17,6 +17,18 @@
 		<script src="namespaces/geometriaCirc.js"></script>
 		<script src="namespaces/geometriaRect.js"></script>
 		<script src="namespaces/namespaces.js"></script>
-		<script src="modulos/modules.js"></script>
+		<!-- <script src="modulos/modules.js"></script> -->
+		<script>
+			SystemJS.config({
+				baseUrl: "/modulos",
+				packages: {
+					"/modulos": {
+						defaultExtension: "js",
+					},
+				},
+			});
+
+			SystemJS.import("./modulos/modulos.js");
+		</script>
 	</body>
 </html>
