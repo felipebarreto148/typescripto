@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/felipebarreto148/typescripto#readme",
   "dependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "systemjs": "^0.21.6"
   }
 }
