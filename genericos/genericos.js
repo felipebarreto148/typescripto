@@ -34,4 +34,6 @@ imprimir([
     { nome: "Maria Eduarda", idade: 21 },
     { nome: "Luke", idade: 0.2 },
 ]);
+const chamarEcho = echoMelhorado;
+console.log(chamarEcho("Alguma coisa"));
 //# sourceMappingURL=genericos.js.map
