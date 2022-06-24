@@ -29,8 +29,8 @@ pessoa.saudar("Scãowalker");
 
 // Usando Classes...
 class Cliente implements Humano {
-    nome: string = "";
-    ultimaCompra: Date = new Date();
+	nome: string = "";
+	ultimaCompra: Date = new Date();
 	saudar(sobrenome: string) {
 		console.log(`Olá, meu nome é ${this.nome} ${sobrenome}`);
 	}
@@ -41,3 +41,13 @@ meuCliente.nome = "Han";
 saudarComOla(meuCliente);
 meuCliente.saudar("Solo");
 console.log(meuCliente.ultimaCompra);
+
+// Interface Função
+interface FuncaoCalculo {
+	(a: number, b: number): number;
+}
+
+let potencia: FuncaoCalculo;
+potencia = (base: number, exp: number): number => base ** exp;
+
+console.log(potencia(3, 10));

@@ -32,4 +32,7 @@ meuCliente.nome = "Han";
 saudarComOla(meuCliente);
 meuCliente.saudar("Solo");
 console.log(meuCliente.ultimaCompra);
+let potencia;
+potencia = (base, exp) => base ** exp;
+console.log(potencia(3, 10));
 //# sourceMappingURL=interfaces.js.map
