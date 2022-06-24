@@ -35,4 +35,20 @@ console.log(meuCliente.ultimaCompra);
 let potencia;
 potencia = (base, exp) => base ** exp;
 console.log(potencia(3, 10));
+class RealA {
+    a() { }
+}
+class RealAB {
+    a() { }
+    b() { }
+}
+class RealABC {
+    a() { }
+    b() { }
+    c() { }
+}
+class AbstrataABD {
+    a() { }
+    b() { }
+}
 //# sourceMappingURL=interfaces.js.map
