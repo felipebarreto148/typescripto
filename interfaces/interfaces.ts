@@ -81,7 +81,32 @@ class RealABC implements ABC {
 }
 
 abstract class AbstrataABD implements A, B {
-    a(): void {}
-    b(): void {}
-    abstract d(): void;
+	a(): void {}
+	b(): void {}
+	abstract d(): void;
 }
+
+interface Object {
+    log(): void;
+}
+
+Object.prototype.log = function () {
+	console.log(this.toString());
+};
+
+const x = 2;
+const y = 3;
+const z = 4;
+
+x.log();
+y.log();
+z.log();
+
+const cli = {
+	nome: "Felipe",
+	toString() {
+		return this.nome;
+	},
+};
+
+cli.log();
