@@ -136,11 +136,41 @@ novaFila.imprimir();
 // Métodos: obter(chave), colocar({ C, V })
 // limpar(), imprimir()
 
+type mapa<T, R> = {
+	chave: T;
+	valor: R;
+};
+class Mapa<T, R> {
+	private itens: Array<mapa<T, R>> = new Array<mapa<T, R>>();
+
+	obter(chave: T): mapa<T, R> | null {
+		const resultado = this.itens.find((item) => item.chave === chave);
+		return resultado ? resultado : null;
+	}
+
+	colocar(mapa: mapa<T, R>): void {
+		const encontrado = this.obter(mapa.chave);
+		if (encontrado) {
+			encontrado.valor = mapa.valor;
+			return;
+		}
+		this.itens.push(mapa);
+	}
+
+	limpar(): void {
+		this.itens = new Array<mapa<T, R>>();
+	}
+
+	imprimir(): void {
+		console.log(this.itens);
+	}
+}
+
 const mapa = new Mapa<number, string>();
 mapa.colocar({ chave: 1, valor: "Maria" });
 mapa.colocar({ chave: 2, valor: "Felipe" });
 mapa.colocar({ chave: 3, valor: "Pedro" });
-mapa.colocar({ chave: 4, valor: "Ana" });
+mapa.colocar({ chave: 3, valor: "Ana" });
 
 console.log(mapa.obter(2));
 mapa.imprimir();
