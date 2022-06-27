@@ -84,3 +84,43 @@ const d1 = new Data(28, 3, 2022);
 const d2 = new Data(27, 6, 2022);
 
 console.log(new DiferencaEntreDatas(d1, d2).executar());
+
+// Desafio Classe Fila
+// Atributos: fila: (Array)
+// Métodos: entrar proximo imprimir
+
+class Fila<T> {
+	private fila: Array<T>;
+
+	constructor(...args: T[]) {
+		this.fila = args;
+	}
+
+	entrar(element: T) {
+		this.fila.push(element);
+	}
+
+	proximo(): T | string{
+		if (this.fila.length > 0 && this.fila[0]) {
+			const primeiro = this.fila[0];
+			this.fila.splice(0, 1);
+			return primeiro;
+		} else {
+			return "Fila vazia";
+		}
+	}
+
+	imprimir() {
+		console.log(this.fila);
+	}
+}
+
+const fila = new Fila<string>("Felipe", "Maria Eduarda", "Luke");
+fila.imprimir();
+fila.entrar("Noemia");
+fila.imprimir();
+console.log(fila.proximo());
+console.log(fila.proximo());
+console.log(fila.proximo());
+console.log(fila.proximo());
+fila.imprimir();

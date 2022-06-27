@@ -68,4 +68,37 @@ class DiferencaEntreDatas extends OperacaoBinaria {
 const d1 = new Data(28, 3, 2022);
 const d2 = new Data(27, 6, 2022);
 console.log(new DiferencaEntreDatas(d1, d2).executar());
+// Desafio Classe Fila
+// Atributos: fila: (Array)
+// Métodos: entrar proximo imprimir
+class Fila {
+    constructor(...args) {
+        this.fila = args;
+    }
+    entrar(element) {
+        this.fila.push(element);
+    }
+    proximo() {
+        if (this.fila.length > 0 && this.fila[0]) {
+            const primeiro = this.fila[0];
+            this.fila.splice(0, 1);
+            return primeiro;
+        }
+        else {
+            return "Fila vazia";
+        }
+    }
+    imprimir() {
+        console.log(this.fila);
+    }
+}
+const fila = new Fila("Felipe", "Maria Eduarda", "Luke");
+fila.imprimir();
+fila.entrar("Noemia");
+fila.imprimir();
+console.log(fila.proximo());
+console.log(fila.proximo());
+console.log(fila.proximo());
+console.log(fila.proximo());
+fila.imprimir();
 //# sourceMappingURL=genericos.js.map
