@@ -104,4 +104,17 @@ fila.imprimir();
 const novaFila = new Fila(1, 2, 3, 4, 5);
 novaFila.imprimir();
 // const outraFila = new Fila<boolean>(true, false);
+// Desafio Mapa
+// Array de Obejtos (Chave/Valor) => itens
+// Métodos: obter(chave), colocar({ C, V })
+// limpar(), imprimir()
+const mapa = new Mapa();
+mapa.colocar({ chave: 1, valor: "Maria" });
+mapa.colocar({ chave: 2, valor: "Felipe" });
+mapa.colocar({ chave: 3, valor: "Pedro" });
+mapa.colocar({ chave: 4, valor: "Ana" });
+console.log(mapa.obter(2));
+mapa.imprimir();
+mapa.limpar();
+mapa.imprimir();
 //# sourceMappingURL=genericos.js.map
