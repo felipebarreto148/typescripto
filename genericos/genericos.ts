@@ -89,7 +89,7 @@ console.log(new DiferencaEntreDatas(d1, d2).executar());
 // Atributos: fila: (Array)
 // Métodos: entrar proximo imprimir
 
-class Fila<T> {
+class Fila<T extends number | string> {
 	private fila: Array<T>;
 
 	constructor(...args: T[]) {
@@ -100,7 +100,7 @@ class Fila<T> {
 		this.fila.push(element);
 	}
 
-	proximo(): T | string{
+	proximo(): T | string {
 		if (this.fila.length > 0 && this.fila[0]) {
 			const primeiro = this.fila[0];
 			this.fila.splice(0, 1);
@@ -124,3 +124,9 @@ console.log(fila.proximo());
 console.log(fila.proximo());
 console.log(fila.proximo());
 fila.imprimir();
+
+const novaFila = new Fila<number>(1, 2, 3, 4, 5);
+
+novaFila.imprimir();
+
+// const outraFila = new Fila<boolean>(true, false);
