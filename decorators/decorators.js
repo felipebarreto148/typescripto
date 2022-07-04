@@ -6,7 +6,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 // // @logarClasse
-// @decorator("Teste", 123)
+//@decorator({ a: 'teste', b: 123 })
+//@decorator({ a: 'teste'})
 let Eletrodomestico = class Eletrodomestico {
     constructor() {
         console.log("novo...");
@@ -22,9 +23,9 @@ function decoratorVazio(_) { }
 function logarClasseSe(valor) {
     return valor ? logarClasse : decoratorVazio;
 }
-function decorator(a, b) {
+function decorator(obj) {
     return function (constructor) {
-        console.log(a, b);
+        console.log(obj.a, obj.b);
     };
 }
 //# sourceMappingURL=decorators.js.map

@@ -1,5 +1,6 @@
 // // @logarClasse
-// @decorator("Teste", 123)
+//@decorator({ a: 'teste', b: 123 })
+//@decorator({ a: 'teste'})
 @logarClasseSe(true)
 class Eletrodomestico {
 	constructor() {
@@ -17,8 +18,8 @@ function logarClasseSe(valor: boolean) {
 	return valor ? logarClasse : decoratorVazio;
 }
 
-function decorator(a: string, b: number) {
-	return function (constructor: Function): void {
-		console.log(a, b);
+function decorator(obj: { a: string, b?: number }) {
+	return function (constructor: Function): void {	
+		console.log(obj.a, obj.b);
 	};
 }
