@@ -73,4 +73,58 @@ function perfilAdmin(construtor) {
     };
 }
 new MudancaAdministrativa().critico();
+class contaCorrente {
+    constructor(saldo) {
+        this.saldo = saldo;
+    }
+    sacar(valor) {
+        if (valor <= this.saldo) {
+            this.saldo -= valor;
+            return true;
+        }
+        return false;
+    }
+    getSaldo() {
+        return this.saldo;
+    }
+}
+__decorate([
+    naoNegativo
+], contaCorrente.prototype, "saldo", void 0);
+__decorate([
+    congelar
+], contaCorrente.prototype, "sacar", null);
+__decorate([
+    congelar
+], contaCorrente.prototype, "getSaldo", null);
+const cc = new contaCorrente(6000);
+cc.sacar(500);
+console.log(cc.getSaldo());
+/* cc.getSaldo = function () {
+    return this['saldo'] + 1000;
+} */
+cc.sacar(7000);
+console.log(cc.getSaldo());
+// Object.freeze()
+function congelar(alvo, nomeMetodo, descritor) {
+    console.log(alvo);
+    console.log(nomeMetodo);
+    descritor.writable = false;
+}
+function naoNegativo(alvo, nomePropriedade) {
+    delete alvo[nomePropriedade];
+    Object.defineProperty(alvo, nomePropriedade, {
+        get: function () {
+            return alvo['_' + nomePropriedade];
+        },
+        set: function (valor) {
+            if (valor < 0) {
+                throw new Error('Valor negativo!');
+            }
+            else {
+                alvo['_' + nomePropriedade] = valor;
+            }
+        },
+    });
+}
 //# sourceMappingURL=decorators.js.map

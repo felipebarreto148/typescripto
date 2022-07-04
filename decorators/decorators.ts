@@ -18,7 +18,7 @@ type Construtor = { new(...args: any): {} }
 
 function logarObjeto(construtor: Construtor) {
 	console.log('Carregado....');
-	
+
 	return class extends construtor {
 		constructor(...args: any[]) {
 			console.log("Antes...");
@@ -86,3 +86,57 @@ function perfilAdmin<T extends Construtor>(construtor: T) {
 }
 
 new MudancaAdministrativa().critico();
+
+class contaCorrente {
+	@naoNegativo
+	private saldo: number;
+
+	constructor(saldo: number) {
+		this.saldo = saldo;
+	}
+	@congelar
+	sacar(valor: number) {
+		if (valor <= this.saldo) {
+			this.saldo -= valor;
+			return true;
+		}
+		return false;
+	}
+	@congelar
+	getSaldo() {
+		return this.saldo
+	}
+}
+
+const cc = new contaCorrente(6000);
+cc.sacar(500);
+console.log(cc.getSaldo());
+
+/* cc.getSaldo = function () {
+	return this['saldo'] + 1000;
+} */
+cc.sacar(7000);
+console.log(cc.getSaldo());
+
+// Object.freeze()
+function congelar(alvo: any, nomeMetodo: string, descritor: PropertyDescriptor) {
+	console.log(alvo);
+	console.log(nomeMetodo);
+	descritor.writable = false;
+}
+
+function naoNegativo(alvo: any, nomePropriedade: string) {
+	delete alvo[nomePropriedade];
+	Object.defineProperty(alvo, nomePropriedade, {
+		get: function (): any {
+			return alvo['_' + nomePropriedade];
+		},
+		set: function (valor: any): any {
+			if (valor < 0) {
+				throw new Error('Valor negativo!');
+			} else {
+				alvo['_' + nomePropriedade] = valor;
+			}
+		},
+	})
+}
