@@ -70,7 +70,7 @@ const usuarioLogado = {
 class MudancaAdministrativa {
 	critico() {
 		console.log('Algo crítico foi alterado!');
-		
+
 	}
 }
 
@@ -95,7 +95,7 @@ class contaCorrente {
 		this.saldo = saldo;
 	}
 	@congelar
-	sacar(valor: number) {
+	sacar(@paramInfo valor: number) {
 		if (valor <= this.saldo) {
 			this.saldo -= valor;
 			return true;
@@ -139,4 +139,10 @@ function naoNegativo(alvo: any, nomePropriedade: string) {
 			}
 		},
 	})
+}
+
+function paramInfo(alvo: any, nomeMetodo: string, indiceParam: number) {
+	console.log(alvo);
+	console.log(nomeMetodo);
+	console.log(indiceParam);	
 }
