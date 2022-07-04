@@ -40,7 +40,7 @@ interface Eletrodomestico {
 // @decorator({ a: 'teste', b: 123 })
 // @decorator({ a: 'teste'})
 // @logarClasseSe(true)
-// @logarObjeto
+@logarObjeto
 @imprimivel
 class Eletrodomestico {
 	constructor() {

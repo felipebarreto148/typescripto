@@ -31,13 +31,13 @@ function logarObjeto(construtor) {
 // @decorator({ a: 'teste', b: 123 })
 // @decorator({ a: 'teste'})
 // @logarClasseSe(true)
-// @logarObjeto
 let Eletrodomestico = class Eletrodomestico {
     constructor() {
         console.log("novo...");
     }
 };
 Eletrodomestico = __decorate([
+    logarObjeto,
     imprimivel
 ], Eletrodomestico);
 function imprimivel(construtor) {
